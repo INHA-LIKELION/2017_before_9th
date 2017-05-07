@@ -1,0 +1,20 @@
+<h1>Post#edit</h1>
+<p>Find me in app/views/post/edit.html.erb</p>
+<div class="container">
+  <a class="btn btn-default" href="/post/<%= @post.id %>/show" role="button">뒤로 가기</a>
+</div>
+<div class="container">
+  <form action="/post/<%= @post.id %>/update">
+    <div class="form-group">
+      <label for="exampleInputEmail1">제목</label>
+      <input type="text" name="title" value="<%= @post.title %>" class="form-control" id="exampleInputEmail1" placeholder="title">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">내용</label>
+      <textarea rows="10" name="content" class="form-control" id="wexampleInputPassword1"><%= @post.content %>
+      </textarea>
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,34 @@
+<style>
+  .kuboon {
+    border: 3px solid #730E15;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+</style>
+
+<h1>Post#show</h1>
+<p>Find me in app/views/post/show.html.erb</p>
+<div class="container">
+  <a class="btn btn-default" href="/post/index" role="button">뒤로가기</a>
+</div>
+<div class="container">
+  <h2>글내용</h2>
+  <div class="container">
+    <h3>제목 : <%= @post.title %></h3>
+    <p>내용 : <%= @post.content %></p>
+    <a href='/post/<%= @post.id %>/edit'>수정하기</a>
+    <a href='/post/<%= @post.id %>/destroy'>삭제하기</a>
+  </div>
+  <div class="container">
+    <div class="container">
+      <a class="btn btn-default" href="/post/<%= @post.id %>/comment/new" role="button">댓글달기</a>
+    </div>
+    <% @comments.each do |comment| %>
+        <div class='container kuboon'>
+          <p>댓글 : <%= comment.content %></p>
+          <a href='/post/<%= @post.id %>/comment/<%= comment.id %>/edit'>수정</a>
+          <a href='/post/<%= @post.id %>/comment/<%= comment.id %>/destroy'>삭제</a>
+        </div>
+    <% end %>
+  </div>
+</div>

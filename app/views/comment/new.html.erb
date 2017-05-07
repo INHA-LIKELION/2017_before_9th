@@ -1,0 +1,13 @@
+<div class="container">
+  <a class="btn btn-default" href="/post/<%= @post.id %>/show" role="button">뒤로 가기</a>
+</div>
+<div class="container">
+  <form action="/post/<%= @post.id %>/comment/create">
+    <div class="form-group">
+      <label for="exampleInputPassword1">내용</label>
+      <textarea rows="10" name="content" class="form-control" id="wexampleInputPassword1">
+      </textarea>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
