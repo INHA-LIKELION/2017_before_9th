@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+for i in 1..10 do
+  Post.create(title: "유택", content: "#{i}번째 글")
+  for j in 1..10 do
+    Comment.create(content: "#{j}번째 댓글", post_id: "#{i}")
+  end
+end
